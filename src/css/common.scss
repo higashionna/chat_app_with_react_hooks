@@ -1,0 +1,49 @@
+body {
+  font-size: 62.5%;
+}
+
+.current-message-wrap {
+  text-align: right;
+}
+
+.message {
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  margin: 5px 0 0 105px;
+  padding: 8px;
+  border-radius: 4px;
+  background: #d7ebfe;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.current-message {
+  background: #6FC95E;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: -23px;
+    margin-top: -15px;
+    border: 12px solid transparent;
+    border-left: 12px solid #6FC95E;
+  }
+}
+
+.other-message {
+  background: #C1E8DF;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+    border-right: 15px solid #C1E8DF;
+  }
+}
