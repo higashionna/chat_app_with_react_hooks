@@ -4,6 +4,8 @@ import AppContext from '../contexts/AppContext';
 import { Button, Box, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
+// FIXME: 改行できない
+
 const MessageForm = () => {
   const [content, setContent] = useState('');
   const { dispatch } = useContext(AppContext);
