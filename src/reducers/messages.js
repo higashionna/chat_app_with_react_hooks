@@ -1,12 +1,18 @@
-import { ADD_MESSAGE } from '../actions'
+import { ADD_MESSAGE, SET_MESSAGES } from '../actions'
+import currentDate from '../shared';
+import { firebaseDb }from '../firebase';
 
 const messages = (state = [], action) => {
   switch(action.type) {
     case ADD_MESSAGE:
-      const id = state.length === 0 ? 1 : state.length + 1;
-      // id, user_uid, user_nameは仮置き
-      const message = { id, user_uid: 1, user_name: 'sample', content: action.content, read: false, current_user: true }
+      const message = { uid: action.uid,
+                        userImage: action.image,
+                        content: action.content,
+                        createdAt: action.createdAt ? action.createdAt : currentDate() }
+      firebaseDb.ref('messages/').push(message);
       return [...state, { ...message }]
+    case SET_MESSAGES:
+      return [...state, action.messages]
     default:
       return state
   }

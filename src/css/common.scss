@@ -2,20 +2,32 @@ body {
   font-size: 62.5%;
 }
 
-.current-message-wrap {
-  text-align: right;
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .message {
   display: inline-block;
   font-size: 1rem;
   position: relative;
-  margin: 5px 0 0 105px;
   padding: 8px;
   border-radius: 4px;
   background: #d7ebfe;
 
-  p {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+  }
+  pre {
     margin: 0;
     padding: 0;
   }
@@ -24,26 +36,19 @@ body {
 .current-message {
   background: #6FC95E;
   &::before {
-    content: "";
     display: inline-block;
-    position: absolute;
-    top: 18px;
-    right: -23px;
-    margin-top: -15px;
-    border: 12px solid transparent;
+    right: -26px;
     border-left: 12px solid #6FC95E;
+  }
+  pre {
+    text-align: left;
   }
 }
 
 .other-message {
   background: #C1E8DF;
   &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
     left: -30px;
-    margin-top: -15px;
-    border: 15px solid transparent;
     border-right: 15px solid #C1E8DF;
   }
 }

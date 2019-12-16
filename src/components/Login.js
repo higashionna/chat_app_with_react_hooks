@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../contexts/AppContext';
 import { Button, Card, CardActions, CardContent, Grid } from '@material-ui/core';
 import firebase from 'firebase';
 import { firebaseApp } from '../firebase/index';
-import GoogleLoginImage from '../image/btn_google_signin.png';
+import GoogleLoginImage from '../images/btn_google_signin.png';
 import { ADD_CURRENT_USER_INFO } from '../actions';
 
 // BUG: ボタンが二度押しできてしまう。

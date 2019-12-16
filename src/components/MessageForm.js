@@ -4,17 +4,19 @@ import AppContext from '../contexts/AppContext';
 import { Button, Box, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
-// FIXME: 改行できない
-
 const MessageForm = () => {
   const [content, setContent] = useState('');
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
 
   const handleMessageSubmit = e => {
     e.preventDefault();
+    const uid = state.currentUserInfos.uid
+    const image = state.currentUserInfos.image
     dispatch({
       type: ADD_MESSAGE,
-      content
+      uid,
+      content,
+      image
     });
     setContent('');
   }
@@ -22,12 +24,13 @@ const MessageForm = () => {
   const unSubmit = content === '';
 
   return (
-    <Box display='flex' className='fixed-bottom'>
+    <Box container='true' display='flex' style={ { marginTop: '8px' } }>
       <TextField
-        label='コメント'
+        label='メッセージ'
         variant='outlined'
         fullWidth
-        style={{ marginRight: 1 }}
+        multiline
+        style={{ backgroundColor: '#FFF' }}
         value={ content }
         onChange={ e => setContent(e.target.value) }
       />
