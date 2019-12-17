@@ -1,14 +1,13 @@
 import React, { useReducer, useEffect } from 'react';
 import AppContext from '../contexts/AppContext';
-import Footer from '../pages/Footer';
+import MainContent from './MainContent';
 import { firebaseDb } from '../firebase';
-import Header from '../pages/Header';
 import reducer from '../reducers';
 import Login from './Login';
 import { SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from '../actions';
 import { SET_MESSAGES } from '../actions';
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../css/common.scss';
+import '../assets/common.scss';
 
 function App() {
   const initialState = {
@@ -20,7 +19,6 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    // TODO: ここの警告を消したい。
     firebaseDb.ref('messages/').on('child_added', (snapshot) => {
       const messages = snapshot.val()
       dispatch({
@@ -38,13 +36,7 @@ function App() {
 
   return (
     <AppContext.Provider value={ { state, dispatch } }>
-      { state.currentUserInfos ? (
-                                  <>
-                                    <Footer />
-                                  </>
-                                  ) : (
-                                  <Login />)
-      }
+      { state.currentUserInfos ? (<MainContent />) : (<Login />) }
     </AppContext.Provider>
   );
 }
