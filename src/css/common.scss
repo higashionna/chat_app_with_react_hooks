@@ -1,0 +1,54 @@
+body {
+  font-size: 62.5%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.message {
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  padding: 8px;
+  border-radius: 4px;
+  background: #d7ebfe;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    margin-top: -15px;
+    border: 15px solid transparent;
+  }
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.current-message {
+  background: #6FC95E;
+  &::before {
+    display: inline-block;
+    right: -26px;
+    border-left: 12px solid #6FC95E;
+  }
+  pre {
+    text-align: left;
+  }
+}
+
+.other-message {
+  background: #C1E8DF;
+  &::before {
+    left: -30px;
+    border-right: 15px solid #C1E8DF;
+  }
+}
