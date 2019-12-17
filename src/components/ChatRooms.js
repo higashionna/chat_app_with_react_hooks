@@ -1,5 +1,4 @@
 import React from 'react';
-import Room from './Room';
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 
 const Rooms = () => {
@@ -13,7 +12,6 @@ const Rooms = () => {
           </TableRow>
         </TableBody>
       </Table>
-      {/* <Room/> */}
     </>
   )
 }

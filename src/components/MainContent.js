@@ -6,9 +6,9 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { DELETE_CURRENT_USER_INFO } from '../actions';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { firebaseApp } from '../firebase/index';
-import ChatRoom from '../components/ChatRoom';
-import PeopleIcon from '@material-ui/icons/People';
-import Users from '../components/Users'
+import ChatRoom from './ChatRoom';
+// import PeopleIcon from '@material-ui/icons/People';
+// import Users from './Users'
 
 const Footer = () => {
   const [value, setValue] = useState()
@@ -30,7 +30,7 @@ const Footer = () => {
 
   return (
     <BrowserRouter>
-      <Route path='/users' component={ Users } />
+      {/* <Route path='/users' component={ Users } /> */}
       <Route path='/chatRooms' component={ ChatRoom } />
 
       <Box style={ { position: 'fixed', bottom: '0px', left: '0px', width: '100%' } }>
@@ -39,13 +39,13 @@ const Footer = () => {
           onChange={ (_event, newValue) => { setValue(newValue) } }
           showLabels
         >
-          <BottomNavigationAction
+          {/* <BottomNavigationAction
             component={ Link }
             icon={ <PeopleIcon /> }
             label='users'
             to='/users'
             value='users'
-          />
+          /> */}
           <BottomNavigationAction
             component={ Link }
             icon={ <ChatIcon /> }

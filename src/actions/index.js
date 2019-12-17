@@ -1,4 +1,3 @@
-// MEMO: actionとreducersのファイルを混ぜるのがトレンド
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const SET_MESSAGES = 'SET_MESSAGES';
 export const ADD_CURRENT_USER_INFO = 'ADD_USER_INFO';
