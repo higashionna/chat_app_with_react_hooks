@@ -1,10 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
 import { AppContext } from './contexts';
-import { firebaseDb } from './firebase';
+import { firebaseDb, firebaseApp } from './firebase';
 import reducer from './reducers';
 import { BrowserRouter } from 'react-router-dom';
 import { Login } from './views';
-import { SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from './actions';
+import { ADD_CURRENT_USER_INFO } from './actions';
 import { SET_MESSAGES } from './actions';
 import Routes from './Routes';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -30,9 +30,20 @@ function App() {
   }, [])
 
   useEffect(() => {
-    dispatch({
-      type: SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE
-    })
+    firebaseApp.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const uid = user.uid
+        const name = `ゲストユーザー${ uid }`
+        const image = user.photoURL
+
+        dispatch({
+          type: ADD_CURRENT_USER_INFO,
+          uid,
+          name,
+          image
+        })
+      }
+    });
   }, []);
 
   return (

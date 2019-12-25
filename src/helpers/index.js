@@ -1,5 +1,3 @@
-export const APP_KEY = 'currentUserInfo';
-
 const currentDate = () => {
   const currentMonth = new Date().getMonth() + 1
   const currentDate = new Date().getDate()
