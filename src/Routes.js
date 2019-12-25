@@ -1,8 +1,7 @@
 import React from 'react';
-import { Switch, Redirect } from 'react-router-dom';
-import { Users } from './views';
+import { Switch, Redirect, Route } from 'react-router-dom';
+import { ChatRoom, Users, NotFound } from './views';
 import { RouteWithLayout } from './components';
-import { ChatRoom } from './views';
 
 const Routes = () => {
   return (
@@ -14,14 +13,17 @@ const Routes = () => {
       />
       <RouteWithLayout
         component={ Users }
+        exact
         path='/users'
       />
       <RouteWithLayout
         component={ ChatRoom }
+        exact
         path='/chatRoom'
       />
-      {/* ここにnot_foundページを用意する */}
-      {/* <Redirect to="/not-found" /> */}
+      <Route path="*">
+        <NotFound />
+      </Route>
     </Switch>
   )
 }

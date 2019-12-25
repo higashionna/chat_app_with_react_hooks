@@ -76,7 +76,7 @@ const Login = () => {
             className='loginBtn'
             alt='GoogleLoginImage'
             style={ { cursor: 'pointer' } }
-            src={ `${process.env.PUBLIC_URL}/images/btn_google_signin.png` }
+            src={ `${ process.env.PUBLIC_URL }/images/btn_google_signin.png` }
             onClick={ loginAsGoogleAccount }
           />
         </CardActions>
