@@ -1,13 +1,14 @@
 import React, { useReducer, useEffect } from 'react';
-import AppContext from '../contexts/AppContext';
-import MainContent from './MainContent';
-import { firebaseDb } from '../firebase';
-import reducer from '../reducers';
-import Login from './Login';
-import { SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from '../actions';
-import { SET_MESSAGES } from '../actions';
+import { AppContext } from './contexts';
+import { firebaseDb } from './firebase';
+import reducer from './reducers';
+import { BrowserRouter } from 'react-router-dom';
+import { Login } from './views';
+import { SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from './actions';
+import { SET_MESSAGES } from './actions';
+import Routes from './Routes';
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../assets/common.scss';
+import './assets/common.scss';
 
 function App() {
   const initialState = {
@@ -36,7 +37,9 @@ function App() {
 
   return (
     <AppContext.Provider value={ { state, dispatch } }>
-      { state.currentUserInfos ? (<MainContent />) : (<Login />) }
+      <BrowserRouter>
+        { state.currentUserInfos ? (<Routes />) : (<Login />) }
+      </BrowserRouter>
     </AppContext.Provider>
   );
 }

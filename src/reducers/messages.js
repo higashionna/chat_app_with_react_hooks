@@ -1,6 +1,6 @@
-import { ADD_MESSAGE, SET_MESSAGES } from '../actions'
-import currentDate from '../shared';
+import currentDate from '../helpers';
 import { firebaseDb }from '../firebase';
+import { ADD_MESSAGE, SET_MESSAGES } from '../actions';
 
 const messages = (state = [], action) => {
   switch(action.type) {

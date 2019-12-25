@@ -1,5 +1,7 @@
-import { ADD_CURRENT_USER_INFO, DELETE_CURRENT_USER_INFO, SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from '../actions';
-import { APP_KEY } from '../shared';
+import { APP_KEY } from '../helpers';
+import { ADD_CURRENT_USER_INFO,
+         DELETE_CURRENT_USER_INFO,
+         SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from '../actions';
 
 const currentUserInfos = (state = [], action) => {
   switch(action.type) {

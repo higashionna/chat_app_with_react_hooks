@@ -1,8 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 
-const Rooms = () => {
-
+const Users = () => {
   return (
     <>
       <Table aria-label='simple table'>
@@ -16,4 +15,4 @@ const Rooms = () => {
   )
 }
 
-export default Rooms;
+export default Users;

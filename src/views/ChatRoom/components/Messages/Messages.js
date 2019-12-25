@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import AppContext from '../contexts/AppContext';
+import { AppContext } from '../../../../contexts';
 import { Avatar, Grid } from '@material-ui/core';
 
 const $ = require('jquery')

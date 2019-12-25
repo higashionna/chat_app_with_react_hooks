@@ -1,13 +1,11 @@
 import React from 'react';
 import { Box, Container } from '@material-ui/core';
-import Header from '../pages/Header';
-import Messages from './Messages';
-import MessageForm from './MessageForm';
+import { Messages } from './components';
+import { MessageForm } from './components';
 
-const Room = () => {
+const ChatRoom = () => {
   return (
     <>
-      <Header />
       <Container style={ { paddingBottom: '128px' } }>
         <Messages/>
       </Container>
@@ -18,4 +16,4 @@ const Room = () => {
   )
 }
 
-export default Room;
+export default ChatRoom;
