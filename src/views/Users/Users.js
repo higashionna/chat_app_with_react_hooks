@@ -7,7 +7,7 @@ const Users = () => {
       <Table aria-label='simple table'>
         <TableBody>
           <TableRow>
-            <TableCell>user name</TableCell>
+            <TableCell>登録されたユーザー(Googleアカウントのみ)をここに表示予定</TableCell>
           </TableRow>
         </TableBody>
       </Table>
