@@ -8,7 +8,7 @@ import { SET_CURRENT_USER_INFO_FROM_LOCALSTORAGE } from './actions';
 import { SET_MESSAGES } from './actions';
 import Routes from './Routes';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './css/common.scss';
+import './assets/common.scss';
 
 function App() {
   const initialState = {
