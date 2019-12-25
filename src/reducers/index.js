@@ -1,5 +1,5 @@
-import chatRooms from './chatRooms';
 import { combineReducers } from 'redux';
+import chatRooms from './chatRooms';
 import currentUserInfos from './currentUserInfos';
 import messages from './messages';
 

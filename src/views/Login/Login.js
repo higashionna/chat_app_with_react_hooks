@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import AppContext from '../contexts/AppContext';
+import { AppContext } from '../../contexts';
 import { Button, Card, CardActions, CardContent, Grid } from '@material-ui/core';
 import firebase from 'firebase';
-import { firebaseApp } from '../firebase/index';
-import GoogleLoginImage from '../images/btn_google_signin.png';
-import { ADD_CURRENT_USER_INFO } from '../actions';
+import { firebaseApp } from '../../firebase';
+import { ADD_CURRENT_USER_INFO } from '../../actions';
 
 // BUG: ボタンが二度押しできてしまう。
 
@@ -77,7 +76,7 @@ const Login = () => {
             className='loginBtn'
             alt='GoogleLoginImage'
             style={ { cursor: 'pointer' } }
-            src={ GoogleLoginImage }
+            src={ `${process.env.PUBLIC_URL}/images/btn_google_signin.png` }
             onClick={ loginAsGoogleAccount }
           />
         </CardActions>

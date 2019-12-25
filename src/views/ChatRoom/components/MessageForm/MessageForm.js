@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { ADD_MESSAGE } from '../actions';
-import AppContext from '../contexts/AppContext';
+import { ADD_MESSAGE } from '../../../../actions';
+import { AppContext } from '../../../../contexts';
 import { Button, Box, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
